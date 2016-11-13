@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <Title>Web Systems Lab 1</Title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <h2>Part 0: Before Asking Questions</h2>
+    <p>This is a class about Web development. </p>
+    <p>Part of web development is participating in a community of people who are able and willing to help. As most of you likely already know - searching with Google, and sites like Sourcefourge can help answer many of your questions.</p>
+    <p>To participate in this community and to get the best results, you need to interact with it in a contributory and respectful manner. </p>
+    <p><a href="http://catb.org/esr/faqs/smart-questions.html#before">Read this</a> The document as a whole is very blunt, but includes some useful advice for those seeking support. It is highly recommended to read the rest after class.</p>
+    <p>In short, just as office hours are for those who have attended lecture, help during lab will go to those who have put in the effort to help themselves, first. No one learns anything by being spoon-fed solutions. If you receive a response of "check
+        the documentation" or "Google the error message," the instructors and TAs are not blowing you off: they're trying to teach you how to troubleshoot a problem, which will be much more beneficial to you in the long run.</p>
+    <p>Remember that labs are to be done individually. You may ask your <strong>classmates</strong> for help, but you must complete the labs on your own and submit your own work.</p>
+    <p>&nbsp;</p>
+    <h2>Part 1a: Install Your *AMP Stack</h2>
+    <p>An AMP stack is typically installed in one of two ways: via a prepackaged Apache distribution (usually with a standalone installer of some sort), or via your operating system's package management system. You may also install from source, though in
+        practice this is usually reserved for situations where no other method will suffice... if you choose to do so, best of luck.</p>
+    <p>Choose the method that suits your needs and level of experience. If you use one of the distributions not listed here, the minimum requirements are as follows, irrespective of OS:</p>
+    <ul>
+        <li>Apache 2.4+</li>
+        <li>MySQL 5.+ or MariaDB 10+</li>
+        <li>PHP 5.6+</li>
+    </ul>
+    <p><strong>Recommended for Windows:</strong> <a href="http://www.apachefriends.org/en/xampp.html">XAMPP</a><br>
+        <strong>Recommended for Mac:</strong> Homebrew or WAMP</p>
+    <p><strong>Linux users</strong> may also choose to install <a href="http://www.apachefriends.org/en/xampp.html">XAMPP</a> (or another Apache distribution), or download the individual packages available via their respective package management systems
+        (yum, apt-get, etc). </p>
+    <p>Some gotchas if you do:</p>
+    <ul>
+        <li>Installing the mysql package only installs the MySQL client. You want mysql-server, too.</li>
+        <li>Likewise, the php package does not include any integration with mysql by default (though it does include the PHP module for Apache). You'll need php-mysql for this.</li>
+        <li>Remember, Apache is more commonly listed as httpd. This is the name of the package you want to install.</li>
+    </ul>
+    <p>After installation, use the documentation for your distribution to determine how to turn on Apache and MySQL Server, and test that your Web server is up and running by visiting “localhost” in your browser. Recall that this is configured in your hosts
+        file to resolve to the loopback address (127.0.0.1) of your host, thereby allowing you to connect.
+    </p>
+    <h2>Part 1b: Install phpMyAdmin</h2>
+    <p>phpMyAdmin is a Web-based database administration tool, available at <a href="http://www.phpmyadmin.net/home_page/downloads.php">http://www.phpmyadmin.net/home_page/downloads.php</a>. It is already included in most Apache distributions, as well as
+        via most package management solutions (ex: apt-get install phpmyadmin).</p>
+    <p>If phpMyAdmin is not already installed, simply follow the instructions at <a href="http://www.phpmyadmin.net/documentation/#quick_install">http://www.phpmyadmin.net/documentation/#quick_install</a></p>
+    <p><strong>To receive credit for Part 1:</strong> Demonstrate that Apache, MySQL and PHP are working by installing phpMyAdmin (if necessary) and accessing it via localhost (usually <a href="http://localhost/phpmyadmin">http://localhost/phpmyadmin</a>).
+        If you can access phpMyAdmin using the default mysql username “root” with no password, congratulations! Your server is configured correctly.</p>
+    <h2>Part 2: Name-based Virtual Hosts</h2>
+    <p>Name-based virtual hosts (along with multiple databases) are often used by Web developers to work on several projects simultaneously, without having to constantly change the directory structure or work on multiple servers.</p>
+    <p>This is accomplished by using name-based virtual hosts to assign arbitrary (non-conflicting) domain names to each project, and using the hosts file to allow requests for those same names to resolve back to 127.0.0.1 (or ::1 fir IPv6) (just like localhost).
+        Because the required Host header sent with each request will show the domain name requested, Apache can still distinguish between virtual hosts to determine which directory structure and other configuration settings to use.</p>
+    <p>We are going to setup a few virtual servers for this class;</p>
+    <p>First, create a new directory on your filesystem called websys, and a subdirectory called lab1. Save the following as index.php within that directory:
+    </p>
+    <p><code>
+                      &lt;?php<br/>
+                      phpinfo();<br/></code></p>
+    <p>This simply prints a page detailing PHP's configuration on a server. Now, find your server's httpd.conf file, and create a new virtual host entry at the bottom of the file.
+        <p>Virtual hosts are defined in
+            <virtualcleanup htmlhost> containers, which specify the IP and port (refer to Lecture 3 for syntax). Add a
+                <virtualhost> container specifying a server name of lab1.websys. The DocumentRoot should be the full path to the lab1 directory you created earlier (with no trailing slash).
+                </virtualhost>
+                </virtualhost>
+        </p>
+        <p>Finally, add an entry in your hosts file mapping your new virtual host to 127.0.0.1 (refer to Lecture 2 for location/syntax).</p>
+        <p>Recall that httpd.conf changes are only processed when the server first starts. Restart Apache for the changes to take effect.</p>
+        <p>After visiting <a href="http://lab1.websys/">http://lab1.websys</a>, you should see a printout of PHP's configuration. If so, congratulations! Name-based virtual hosting has been configured correctly for that domain. <strong>Output this page to a txt file or pdf file</strong></p>
+        <p>To keep projects organized in this course, add a virtual host for websys which will allow for the file directory to be shown if an index.php or .html does not exist. Then repeat the process by adding new subdirectories under websys/ and changing
+            both the ServerName and DocumentRoot directives of your respective
+            <virtualhost> containers.</virtualhost>
+        </p>
+        <p><strong>To receive credit for Part 2:</strong> copy your screenshots, config files and your hosts file into your lab1 directory. Add a readme file and zip the entire websys directory with the convention of <em>RCSid</em>-websys-lab#.zip, where
+            # is your lab number, in this case 1</p>
+        <p><strong>Additional reading:</strong></p>
+        <p>The default installation for XAMPP is not secure - it is intended for development. READ the following:</p>
+        <p>Read the following : <a href="http://www.apachefriends.org/en/xampp-macosx.html#873">http://www.apachefriends.org/en/xampp-macosx.html#873</a></p>
+        <p>&nbsp;</p>
+</body>
+
+</html>

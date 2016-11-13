@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+      <head>
+      <meta charset="utf-8">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Web Sys I - Fall 2015 - Lab #9 - PDO</title>
+      <style>
+/*I have included the css here for convenience only*/
+
+body {
+  font-family: helvetica;
+  width: 900px;
+}
+
+#mainBlock {
+  width: 700px;
+  background-color: #fee;
+  padding: 30px;
+  float: right;
+  clear: both;
+  overflow: hidden;
+}
+
+.sectiondetail {
+  list-style-type: none;
+}
+
+.noteThis {
+  color: red;
+  font-size: 110%;
+}
+
+.minor {
+  line-height: 90%!important;
+  font-size: 90%!important;
+  border-style: solid;
+  border-color: red;
+  padding: 5px;
+  text-align: left;
+  width: 80%;
+}
+
+strong {
+  font-size: 105%;
+}
+
+em {
+  color: green;
+}
+
+table {
+  display: inline-table;
+}
+
+.rubcat {
+  -webkit-column-width: 100px;
+  -moz-column-width: 100px;
+  column-width: 100px;
+}
+
+.rubpts {
+  -webkit-column-width: 40px;
+  -moz-column-width: 40px;
+  column-width: 40px;
+}
+</style>
+      </head>
+      <body>
+      <div id="mainBlock">
+        <h1>Lab #9 - PDO &amp; Prepared statements</h1>
+        <ul id="sections">
+          <li class="sectionheader"> Part 0 </li>
+          <li class="sectiondetail">
+            <ul class="subsections">
+              <li class="subsectiondetail"> Create a new folder for Lab 9 in your websys folder. At this point, you should have a virtual server pointing to an index.php or index.html file in your websys folder being served as a virtual host on your web server. </li>
+            </ul>
+          </li>
+          <li class="sectionheader"> Part 1 - <strong>install.php</strong> </li>
+          <li class="sectiondetail">
+            <ul class="subsections">
+              <li class="subsectiondetail"> Lab 9 is going to be a redux of lab 8, using PDO and prepared statements.  So: <br/>
+                <br/>
+                Create an <strong>install.php</strong> or similar file <br/>
+                <br/>
+              </li>
+              <li class="subsectiondetail"> Using PDO execute function, Create a database named <em>yourRCSid-websyslab9</em> checking to make sure it does not already exist. </li>
+              <li class="subsectiondetail"> Create a table named <em>courses</em> if it does not already exist. It should contain the same structure as in lab 8:
+                <ul>
+                  <li>crn (int 11, primary key)</li>
+                  <li>prefix (varchar 4, not null)</li>
+                  <li>number (smallint 4, not null)</li>
+                  <li>etc&hellip;</li>
+                </ul>
+              </li>
+              <li class="subsectiondetail"> Create a table named <em>students</em> if it does not already exist.  It should contain, as in lab 8:
+                <ul>
+                  <li>rin (int 9, primary key)</li>
+                  <li>first name (varchar 100, not null)</li>
+                  <li>last name (varchar 100, not null)</li>
+                  <li>etc&hellip;</li>
+                </ul>
+              </li>
+              <li>Create a table named <em>grades</em>, if it does not already exist, containingthe same fields as in lab 8:
+                <ul>
+                  <li>id (int primary key, auto increment)</li>
+                  <li>crn (foreign key)</li>
+                  <li>rin (foreign key)</li>
+                  <li>grade (int 3 not null)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="sectionheader"> Part 2 - <strong>index.php</strong> </li>
+          <li class="sectiondetail">
+          <ul class="subsections">
+            <li class="subsectiondetail"> Using these tables, PDO and prepared statements, create a file named <strong>index.php</strong> to display a webpage whih will provide the user with 4 options: </li>
+            <ol>
+              <li>Choice 1, Install, will;</li>
+              <ul>
+                <li>call install.php and display its output</li>
+              </ul>
+              <li>Choice 2, Load, will call <em>insert.php</em> and will;</li>
+              <ul>
+                <li>INSERT at least 5 courses into the courses table</li>
+                <li>INSERT at least 20 students into the students table</li>
+                <li>ADD 10 grades into the grades table</li>
+              </ul>
+              <li>Choice 3, Students, will call <em>output.php</em> and will;</li>
+              <ul>
+                <li>list all students, in alphabetical order by last name, and then firstname</li>
+              </ul>
+              <li>Choice 4, Grade distribution, will call output.php and will;</li>
+              <ul>
+                <li>List the count of all students in each of the following categories;</li>
+                <ul>
+                  <li>90-100</li>
+                  <li>80-89</li>
+                  <li>70-79</li>
+                  <li>65-69</li>
+                  <li>&lt; 65</li>
+                </ul>
+              </ul>
+            </ol>
+            <li class="subsectiondetail"> You may organize your initial page and called pages in any way you like.  Names as well.  What I am looking for is a page which will allow a user to create a database and tables if they do not already exist, place content into the tables, and query information from those tables and output them on the screen.</li>
+            <li class="subsectiondetail"> While I am less concerned with style at this point than I am with the technical aspects of the lab, your pages should have some aesthetic appeal.  You may use forms for data entry or not.  You must have at least one prepared statement and you should implement choices 3 & 4 with one program.  You will likely need to consider using POST. Mysql and Mysqli are <strong>not</strong> acceptable for this lab. </li>
+            </li>
+          </ul>
+          </li>
+          <li class="sectionheader"> Receiving credit </li>
+          <li class="sectiondetail">
+            <ul class="subsections">
+              <li class="subsectiondetail"> Export the structure and content (including the CREATE) of your database and tables to a text file using phpmyadmin. </li>
+              <li class="subsectiondetail"> Copy the text files from phpmyadmin into your lab9 folder. </li>
+              <li> As normal, there should be a <strong>readme</strong> file included which explains your observations/comments/assumptions from this lab. </li>
+            </ul>
+          </li>
+          <li class="sectionheader"> Submission </li>
+          <li class="sectiondetail">
+            <ul class="subsections">
+              <li class="subsectiondetail"> <strong>Zip</strong> up your lab 9 folder ... </li>
+              <li class="subsectiondetail"> Rename it to <strong>websyslab9-<em>yourname</em>-<em>yourRCSID</em>.zip</strong> </li>
+              <li class="subsectiondetail"> <strong>Submit</strong> it to LMS </li>
+            </ul>
+          </li>
+          <li class="sectionheader"> Rubric/Grading </li>
+          <li class="sectiondetail">
+            <ul class="subsections">
+              <li class="subsectiondetail">
+                <table>
+                  <tr>
+                    <td class="rubcat">Part 1</td>
+                    <td class="rubpts">15 Points</td>
+                  </tr>
+                </table>
+              </li>
+              <li class="subsectiondetail">
+                <table>
+                  <tr>
+                    <td class="rubcat">Part 2</td>
+                    <td class="rubpts">45 Points</td>
+                  </tr>
+                </table>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+</body>
+</html>

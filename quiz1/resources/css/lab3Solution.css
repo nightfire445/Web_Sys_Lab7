@@ -1,0 +1,17 @@
+    h1 {
+      text-align:center;
+    }
+
+    .quote, #info {
+      font-size:1.25em;
+      letter-spacing:0.05em;
+      width:50%;
+      margin:1em auto;
+    }
+    .quote .attribution {
+      font-size:0.8em;
+      font-style:italic;
+    }
+    .quote .attribution:before {
+      content:'-- ';
+    }

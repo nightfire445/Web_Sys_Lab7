@@ -1,0 +1,31 @@
+/* Lab 2 CSS File Solomon Mori
+ */
+
+
+SongTitle{
+  font-size: 80%;
+}
+
+Artist{
+  color: blue;
+}
+
+Album{
+  font-style: italic;
+}
+
+SongTitle, Artist, Album, ReleaseDate, Genre, Website{
+  /* to make each element appear on a new line */
+  display: block;
+
+}
+
+SongA, SongB, SongC, SongD{
+  /* Seperate the different songs and make sure they expand the screen */
+  display: block;
+  width: 99%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-style: solid;
+}
+

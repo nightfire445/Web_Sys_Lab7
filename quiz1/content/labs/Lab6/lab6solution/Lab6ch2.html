@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Lab 6 - Start</title>
+  <script src="./lab6files/jquery-1.7.1.js"></script><style> 
+   /* extraneous style tags removed and body moved up.  */
+    body {
+      /* Credit to Salas Photography. Used under the fair use doctrine for educational purposes. */
+      background:url(http://www.salasphotography.com/_wizardimages/lightblue_square.jpg);
+    }
+  </style>
+  <script>
+  $(document).ready(function() {
+    //appending repeatedly slows down as the document gets larger. 5000 string cocatenations and one append is more efficient than 5000 appends. 376.63ms down to 194.07 ms loading
+    var text = "<li>This is an item in the list. Click to make me disappear.</li>";
+    for (var i = 1; i < 5000; i++) {
+      text += "<li>This is an item in the list. Click to make me disappear.</li>";
+    }
+    // .html() is more efficent than append 112 ms vs 235ms
+    //ul#foo is more efficent than div.bar ul#foo since the latter contains redundant selectors
+    $("ul#foo").html(text);
+
+    //javascript more efficent than jquery 126ms vs 240ms
+    document.getElementById("foo").addEventListener("click", function(e){
+      if(e.target && e.target.nodeName == "LI"){
+        $(e.target).hide(400);
+      }
+    });
+
+    $("#showall").click(function(e) { 
+      $("li").show(400);
+    });
+  });
+  </script>
+</head>
+<body>
+  <div class="bar">
+    <a href="" id="showall">Show All</a>
+    <!--removed the redundant text in the file to reduce file size 318 kb to 1.13 kb-->
+    <ul id="foo" class="bar">
+    <ul>
+  </div>
+
+</body>
+</html>

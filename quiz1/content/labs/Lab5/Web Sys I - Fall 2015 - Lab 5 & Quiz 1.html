@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!-- saved from url=(0137)https://lms9.rpi.edu:8443/bbcswebdav/pid-16718-dt-content-rid-202721_1/courses/1509_ITWS_2110_00/ITWS2200-F15-Quiz1-lab5instructions.html -->
+<html class="gr__lms9_rpi_edu" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Sys I - Fall 2015 - Lab 5 &amp; Quiz 1</title>
+
+<link href="../../../resources/css/sitewide.css" rel="stylesheet" type="text/css"></head>
+<body>
+
+<div class="mainBlock">
+  <h1>Quiz 1 - jQuery, JSON and AJAX - Lab 5</h1>
+    <h2 class="sectionheader"> Description </h2>
+    <li class="sectiondetail">
+      <ul class="subsections">
+        <li class="subsectiondetail"> Using what we have learned you are to create a new site for this course. </li>
+        <li class="subsectiondetail"> The site should be well structured and should allow for content to be dynamic as the course progresses. </li>
+        <li class="subsectiondetail"> It will be placed in the folder named websysquiz1 </li>
+      </ul>
+    </li>
+    <h2 class="sectionheader"> Part 1 </h2>
+    <li class="sectiondetail">
+      <ul class="subsections">
+        <li class="subsectiondetail"> In the websysquiz1 folder you will need to create a homepage named index.html </li>
+        <li class="subsectiondetail"> This page will be your websys site's 'landing page' and will ultimately contain a menu of links to relevent material for the class. </li>
+        <li class="subsectiondetail"> Make sure you allow for a structure similar to the following;</li>
+        <li class="subsectiondetail" style="list-style:none">
+          <ul style="list-style:none">
+            <li>root</li>
+            <li>-resources</li>
+            <li>-content</li>
+            <li>--lectures…only a representitive sample…</li>
+            <li>--labs</li>
+            <li>---labx</li>
+            <li>----labxsolution</li>
+            <li>--homeworks</li>
+            <li>---homework1</li>
+            <li>----homework1solution</li>
+            <li>---homework2</li>
+            <li>----homework2solution</li>
+            <li>--quizzes</li>
+            <li>---quiz1</li>
+            <li>----quiz1solution</li>
+            <li>…and so on…</li>
+          </ul>
+        </li>
+        <li class="subsectiondetail"><strong>Content:</strong> Take the HTML files from each lab, homework assignment and this quiz from LMS, and place it the appropriate directory.</li>
+        <li class="subsectiondetail">Make sure your css, js and resource files are all in the appropriate directories/folders.</li>
+        <li class="subsectiondetail">Modify the htmls from LMS to follow a consistent style for all assignments using external CSS apply style.  (you may use this file as an example)</li>
+      </ul>
+    </li>
+    <h2 class="sectionheader"> Part 2 : jQuery &amp; AJAX &amp; JSON </h2>
+    <li class="sectiondetail">
+      <ul class="subsections">
+        <li class="subsectiondetail">You are to create a JSON file with data necessary to reference links to data to be represented on your site.</li>
+        <li class="subsectiondetail">The file should contain at least, the file name, and a description of the content as well as a type (ie. assignment, lecture, example, etc). You may wish to add more, but <em>do <strong>not</strong></em> embed HTML tags in your JSON file.
+        </li><li class="subsectiondetail">You will read this data from the JSON file, using jQuery and AJAX to populate your websys site menu with links to the content pages for the class materials.  Your class materials should allow for any file type to be displayed.  html files will open in the browser - you need to handle the HTML/CSS styling of the content, other content (ie text files or powerpoint presentations) may open in the browser or trigger a download - your choice. </li>
+        <li>All html will need to be styled according to your site. The HTML from LMS is inconsistent - this will never do for a website.</li>
+        <li><em>Suggestion:</em> Remove all formatting tags from the individual assignment files and then create a template for your site with a simple css, and some HTML which may be included.  Then you can read in the plain text of the assignment and format it in your page.</li>
+        <li>make sure you come up with a standard template files for the site.  If you want to have a couple (ie labs.css, lectures.css, header.html, footer.html, etc) that is good, but be careful as you want to have standardization across the site</li>
+        <li>In the future, one should be able to add the content to the appropriate directory(ies), enter an item in the JSON file, and the site should be updated accordingly.</li>
+      </ul>
+    </li>
+    <h2 class="sectionheader"> Part 3 : jQuery UI </h2>
+    <li class="sectiondetail">
+      <ul class="subsections">
+        <li class="subsectiondetail"> By now you should have a website that reads from a JSON file to build a main page with menu items accessing different content pages for our site.  Some of those pages also have links to other pieces of content - zip files, html files, etc...)
+        </li><li class="subsectiondetail"> You are to peruse the jQuery UI menu and style options and choose something you like.  Then you are to incorporate that/those function(s) into your website. </li>
+        <li class="subsectiondetail"> What we want to do now, is create a menu for our main page, which will allow us to get to the content.  A <em>potential</em> example might be that when a user lands on the page, they see some information about the course and/or the site.  Then they see a menu which lets them select 'LABS'.  after selecting labs, and are brought to a page with all of the labs listed.  When they hover over a lab name, a menu, pop-up, etc opens to show them a description of the lab along with a list of hyperlinks which can be selected to access the files for download.</li>
+        <li class="subsectiondetail"> Be creative! Here are a couple of examples...</li>
+        <li><a href="http://jqueryui.com/tabs/">tabs</a></li>
+        <li><a href="http://jqueryui.com/selectmenu/">selectable menu</a></li>
+        <li>There are lot more - don't just use these....</li>
+      </ul>
+    </li>
+    <h2 class="sectionheader"> Summary </h2>
+    <li class="sectiondetail">
+      <ul class="subsections">
+        <li class="subsectiondetail"> You are going to build a dynamic website for Websys</li>
+        <li class="subsectiondetail"> When the page is opened it will display a page that describes the course, and provides access to the content from the semester </li>
+        <li class="subsectiondetail"> The page will link to the lectures, labs, homeworks, quiz and their solutions from the semester. </li>
+        <li class="subsectiondetail"> The items/links on the page will come from a JSON file which you will create.</li>
+        <li class="subsectiondetail"> The assignment instructions should display on the page in a consistent and structured manner.</li>
+        <li class="subsectiondetail"> The lectures and other non html content may be pulled as is for download - For Example: If lecture 1 is a PowerPoint file, then it should be located in the appropriate directory, there needs to be an entry in the json file, and when the page loads, there should be a link to the file (use target="_blank").  Beyond that, no functionality is required. (if your browser is setup correctly the file should download) </li>
+        <li class="subsectiondetail">
+        </li><li> There must be a <strong>README.md</strong> file included which explains the logic for your site, and your observations from this lab.  Additionally, you should explain your choice for your jQuery choice and JSON format.  Remember, creativity is important! </li>
+      </ul>
+    </li>
+    <h2 class="sectionheader"> Submission </h2>
+    <li class="sectiondetail">
+      <ul class="subsections">
+        <li class="subsectiondetail"> <strong>Zip</strong> up your websysquiz1 folder ... </li>
+        <li class="subsectiondetail"> Rename it to <strong>websysquiz1-<em>yourname</em>-<em>yourRCSID</em>.zip</strong> </li>
+        <li class="subsectiondetail"> <strong>Submit</strong> it to LMS </li>
+      </ul>
+    </li>
+    <h2 class="sectionheader"> Rubric/Grading </h2>
+    <li class="rubricsectiondetail">
+      <ul class="rubricsubsections">
+        <li class="rubricsubsectiondetail">
+          <table>
+            <tbody><tr>
+              <td class="rubcat">Part 1-setup</td>
+              <td class="rubpts">5 Points</td>
+            </tr>
+          </tbody></table>
+        </li>
+        <li class="rubricsubsectiondetail">
+          <table>
+            <tbody><tr>
+              <td class="rubcat">Part 2-HTML and CSS</td>
+              <td class="rubpts">20 Points</td>
+            </tr>
+          </tbody></table>
+        </li>
+        <li class="rubricsubsectiondetail">
+          <table>
+            <tbody><tr>
+              <td class="rubcat">Part 3-jQueryUI</td>
+              <td class="rubpts">20 Points</td>
+            </tr>
+          </tbody></table>
+        </li>
+        <li class="rubricsubsectiondetail">
+          <table>
+            <tbody><tr>
+              <td class="rubcat">Readme</td>
+              <td class="rubpts">10 Points</td>
+            </tr>
+          </tbody></table>
+        </li>
+        <li class="rubricsubsectiondetail">
+          <table>
+            <tbody><tr>
+              <td class="rubcat">Creativity</td>
+              <td class="rubpts">40 Points</td>
+            </tr>
+          </tbody></table>
+        </li>
+        <li class="rubricsubsectiondetail">
+          <table>
+            <tbody><tr>
+              <td class="rubcat">Validity</td>
+              <td class="rubpts">5 Points</td>
+            </tr>
+          </tbody></table>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</html>

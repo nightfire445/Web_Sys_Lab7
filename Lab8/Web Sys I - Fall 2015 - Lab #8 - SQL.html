@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!-- saved from url=(0138)https://lms9.rpi.edu:8443/bbcswebdav/pid-16721-dt-content-rid-228986_1/courses/1509_ITWS_2110_00/ITWS2200-F15-W10C2-Lab8-instructions.html -->
+<html class="gr__lms9_rpi_edu" style=""><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Web Sys I - Fall 2015 - Lab #8 - SQL</title>
+   <style type="text/css">
+
+      /*I have included the css here for convenience only*/
+
+      body {
+         font-family: helvetica;
+         width: 900px;
+      }
+
+      #mainBlock{
+         width:700px;
+         background-color: #fee;
+         padding:30px;
+         float: right;
+         clear: both;
+         overflow: hidden;
+      } 
+      
+      .sectiondetail {
+         list-style-type: none;
+      }
+
+      .noteThis {
+         color:red;
+         font-size:110%;
+      }
+      .minor {
+         line-height: 90% !important;
+         font-size:90% !important;
+         border-style: solid;
+         border-color: red;
+         padding:5px;
+         text-align: left;
+         width: 80%;
+      }
+      strong {
+         font-size: 105%;
+      }
+
+      em {
+         color:green;
+      }
+      
+      table {
+         display: inline-table;
+      }
+
+      .rubcat {
+         -webkit-column-width: 100px;
+         -moz-column-width: 100px;
+         column-width: 100px;
+      }
+
+      .rubpts {
+         -webkit-column-width: 40px;
+         -moz-column-width: 40px;
+         column-width: 40px;
+      }
+
+
+
+   </style>
+</head>
+<body>
+   <div id="mainBlock">
+      <h1>Lab #8 - SQL</h1>
+      <ul id="sections">
+         <li class="sectionheader">
+            Part 0
+         </li>
+         <li class="sectiondetail">
+            <ul class="subsections">
+               <li class="subsectiondetail">
+                  Create a new folder for Lab 8 in your websys folder, and confirm that it is being served by Apache. At this point, or very soon, you should have at least 1 virtual server pointing to an index.html page in your websys folder, being served as a virtual host on your web server.  And you should be close to being able to add a container in your JSON file for the labs.
+               </li>
+               <li class="subsectiondetail">
+                  Ensure that you have a browser plugin capable of debugging JavaScript (you should be familiar with setting breakpoints and watch variables from ealier labs). If you are stuck with this, ask a team member, Wisal, or myself.
+               </li>
+            </ul>
+         </li>
+         <li class="sectionheader">
+            Part 1
+         </li>
+         <li class="sectiondetail">
+            <ul class="subsections">
+              <li class="subsectiondetail">
+                in phpmyadmin or the command line: Create a database named <em>websyslab8</em>. 
+             </li>
+             <li class="subsectiondetail">
+              Create a table named <em>courses</em>.  It should contain
+              <ul>
+                <li>crn (int 11, primary key)</li>
+                <li>prefix (varchar 4, not null)</li>
+                <li>number (smallint 4, not null)</li>
+                <li>title (varchar 255, not null)</li>
+                <li>collate should be <strong>utf8_unicode_ci</strong></li>
+             </ul>
+          </li>
+          <li class="subsectiondetail">
+           Create a table named <em>students</em>.  It should contain
+           <ul>
+             <li>rin (int 9, primary key)</li>
+             <li>rcsID (char 7)</li>
+             <li>first name (varchar 100, not null)</li>
+             <li>last name (varchar 100, not null)</li>
+             <li>alias (varchar 100, not null)</li>
+             <li>phone (int 10)</li>
+             <li>collate should be <strong>utf8_unicode_ci</strong></li>
+          </ul>
+       </li>
+    </ul>
+ </li>
+ <li class="sectionheader">
+   Part 2
+</li>
+<li class="sectiondetail">
+   <ul class="subsections">
+      <li class="subsectiondetail">
+         Using these tables, perform the following:
+         <ol>
+           <li>Add address fields (st, city, st, zip) to the students table</li>
+           <li>Add section and year fields to the courses table</li>
+           <li>CREATE a grades table containing
+             <ul>
+               <li>id (int primary key, auto increment)</li>
+               <li>crn (foreign key)</li>
+               <li>rin (foreign key)</li>
+               <li>grade (int 3 not null)</li>
+            </ul>
+         </li>
+         <li>INSERT at least 4 courses into the courses table</li>
+         <li>INSERT at least 4 students into the students table</li>
+         <li>ADD 10 grades into the grades table</li>
+         <li>list all students in the following sequences; in alphabetical order by rin, last name, RCSid, and firstname</li>
+         <li>list all students rin, name and address if their grade in any course was higher than a 90</li>
+         <li>list out the average grade in the second course</li>
+         <li>list out the number of students</li>
+      </ol>
+      
+      
+   </li>
+</ul>
+</li>
+<li class="sectionheader">
+   Receiving credit
+</li>
+<li class="sectiondetail">
+   <ul class="subsections">
+      <li class="subsectiondetail">
+         Export the structure and content of your database and tables to a text file using phpmyadmin.  
+      </li>
+      <li class="subsectiondetail">
+         After entering each command to the SQL server (via phpmyadmin or command line), copy your command and output and paste into a document (word, text, etc) after an entry for each question number and description. 
+      </li>
+      <li>
+       As normal, there should be a <strong>readme</strong> file included which explains your observations/comments/assumptions from this lab.
+    </li>
+ </ul>
+</li>
+<li class="sectionheader">
+   Submission
+</li>
+<li class="sectiondetail">
+   <ul class="subsections">
+      <li class="subsectiondetail">
+         <strong>Zip</strong> up your lab 8 folder ...
+      </li>
+      <li class="subsectiondetail">
+         Rename it to <strong>websyslab8-<em>yourname</em>-<em>yourRCSID</em>.zip</strong>
+      </li>
+      <li class="subsectiondetail">
+         <strong>Submit</strong> it to LMS
+      </li>
+   </ul>
+</li>
+<li class="sectionheader">
+   Rubric/Grading
+</li>
+<li class="sectiondetail">
+   <ul class="subsections">
+      <li class="subsectiondetail">
+         <table>
+            <tbody><tr>
+               <td class="rubcat">Part 1</td>
+               <td class="rubpts">10 Points</td>
+            </tr>
+         </tbody></table>                   
+      </li>
+      <li class="subsectiondetail">
+         <table>
+            <tbody><tr>
+               <td class="rubcat">Part 2</td>
+               <td class="rubpts">20 Points</td>
+            </tr>
+         </tbody></table>  
+      </li>
+   </ul>
+</li>           
+</ul>
+</div>
+
+</body></html>
