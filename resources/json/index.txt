@@ -1,0 +1,177 @@
+
+{	
+	"solutions":[
+
+
+	{
+		"type":"solutions",
+			"description":"Setup XAMPP and implement Name-based Virtual Hosts",
+			"filename":"index",
+			"extension":"php"
+	},
+	{
+		"type":"solutions",
+		"description":"Setup XAMPP and implement Name-based Virtual Hosts",
+		"filename":"lab2/",
+		"extension":""
+	}
+	],
+
+	"labs":[
+
+		{
+			"type":"lab",
+			"description":"Setup XAMPP and implement Name-based Virtual Hosts",
+			"filename":"ITW2110-F16-W3-Lab1-AMPStack",
+			"extension":"html"
+		},
+
+
+		{
+			"type":"lab",
+			"description":"Create songlists by writing Semantic HTML, XML, HTML with CSS, & XML with CSS",
+			"filename":"ITWS2110-F16-W4C2-Lab2-Instructions",
+			"extension":"html"
+		},
+
+		{
+			"type":"lab",
+			"description":"Explore JavaScript and the Document Object Model",
+			"filename":"lab3instructions",
+			"extension":"html"
+		},
+
+		{
+			"type":"lab",
+			"description":"Explore AJAX and JSON",
+			"filename":"Lab4Instructions",
+			"extension":"html"
+		},
+
+		{
+			"type":"lab",
+			"description":"Impossible to say",
+			"filename":"Lab5",
+			"extension":"html"
+		},
+
+		{
+			"type":"lab",
+			"description":"Spill no secrets here",
+			"filename":"Lab6",
+			"extension":"html"
+		},
+		
+		{
+			"type":"lab",
+			"description":"Only Plotka Knows",
+			"filename":"Lab7",
+			"extension":"html"
+		},
+
+		{
+			"type":"lab",
+			"description":"You tell me",
+			"filename":"lab8",
+			"extension":"html"
+		},
+
+		{
+			"type":"lab",
+			"description":"IDK",
+			"filename":"lab9",
+			"extension":"html"
+		},
+		{
+			"type":"lab",
+			"description":"How can I?",
+			"filename":"lab10",
+			"extension":"html"
+		}
+
+	],
+
+	"lectures":[
+
+		{
+			"type":"lecture",
+			"description":"Websys I Intro Lecture, who are we, who are you? Whats in a name?",
+			"filename":"ITWS2110-F16-Pres1-W1C1",
+			"extension":"pptx"
+		},
+		{
+			"type":"lecture",
+			"description":"Website Architecture, building websites",
+			"filename":"ITWS2110-F16-Pres2-W1C2-HTTP-Architecture",
+			"extension":"pptx"
+		},
+		{
+			"type":"lecture",
+			"description":"Apache Web Server and the AMP Stack",
+			"filename":"ITWS2110-F16-W2C1P2-Sep10-Pres3-AMPStack-httpd",
+			"extension":"pptx"
+		},
+		{
+			"type":"lecture",
+			"description":"Markup Languages, SGML, XML, HTML, XHTML",
+			"filename":"ITWS2110-F16-W3C2P1-Pres4-MarkupLanguages",
+			"extension":"pptx"
+		},
+		{
+			"type":"lecture",
+			"description":"CSS Semantics vs Presentation",
+			"filename":"ITWS2110-F16-W4C1P2-CSS",
+			"extension":"pptx"
+		},
+		{
+			"type":"lecture",
+			"description":"CSS Beyond the Basics",
+			"filename":"ITWS2110-F16-Pres6-W5C1P1-CSSBeyond",
+			"extension":"pptx"
+		},
+		{
+			"type":"lecture",
+			"description":"JavaScript and the Document Object Model (DOM)",
+			"filename":"ITWS2110-F16-Pres7-W5C1P2-javaScriptrev",
+			"extension":"pptx"
+		},
+		{
+			"type":"lecture",
+			"description":"Cant download LECTURE HTML5 :(",
+			"filename":"Lecture8",
+			"extension":"pptx"
+		}
+	],
+
+	"homework":[
+
+		{
+			"type":"homework",
+			"description":"Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+			"filename":"ITWS2110-F16-Assignment1-HTML,CSSandMicroformats",
+			"extension":"docx"
+		},
+		{
+			"type":"homework",
+			"description":"The suspense is killing me.",
+			"filename":"hw2",
+			"extension":"docx"
+		}
+	],
+
+	"quizzes":[
+		{
+			"type":"quiz",
+			"description":"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+			"filename":"ITWS2200-F16-Quiz1-instructions",
+			"extension":"html"
+		}
+		,
+		{
+			"type":"quiz",
+			"description":"Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+			"filename":"ITWS2200-F16-Quiz1-instructions",
+			"extension":"html"
+		}
+	]
+}

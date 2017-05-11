@@ -36,7 +36,7 @@ function dotooltip(element){
 
    var ajaxRequest = new XMLHttpRequest();
    console.log(ajaxRequest);
-  console.log("Stops working in $.getJSON");  
+    
    $.getJSON("resources/json/index.json" , function(json){
     //build elements of each Type in nav
 
